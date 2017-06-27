@@ -1,0 +1,180 @@
+<!--
+Project:        Andorra Cultural Heritage
+Authors:
+                |MIT|Media Lab|Changing Places|
+                Juanita Devis
+                |Fundació ActuaTECH|
+                Nuria Macia
+                |Universitat d'Andorra|
+                Cristina Yáñez
+                Lara Martinez
+                |Govern d'Andorra|Ministeri de Cultura, Joventut i Esports|Departament de Patrimoni Cultural Museos|
+                Sara Ubach
+                David Mas
+                Abel Fortó
+Description:    It displays a map with the cultural heritage of Andorra.
+Version:        2.0
+Date:           April 2017
+!-->
+
+<head>
+    <title>Andorra Cultural Heritage</title>
+    <link href="chfavicon32x32.jpg" rel="shortcut icon" type="image/x-icon" >
+<!--  <script src='https://maps.googleapis.com/maps/api/js?sensor=false&extension=.js'></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt8bbppRnopqiZDPHb5cjRdKV9yzMwX7U&extension=.js"
+    ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>    
+    <script type="text/javascript" src="addLayers.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet" type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,100,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300' rel='stylesheet' type='text/css'		>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<!-- Legend-->
+<div class="legendbox">
+    <div class="legend">
+            
+         <div class="dropdown maintitleline">
+            <div class="boxt">
+                    <a class="legendtitle" target="_blank" href="http://cities.media.mit.edu/andorra-innovation/#CulturalHeritage">andorra <br> cultural heritage</a>
+            </div>
+        </div>     
+        <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+                
+                <input type="checkbox" id="filtertogglemonuments" 
+                       value="amonuments" checked="checked" />
+                <label for="filtertogglemonuments">
+                    Monuments 
+                </label>
+                <div class="CountHeritage">228</div>
+            </div>
+        </div>
+         <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+    
+                <input type="checkbox" id="filtertogglecontheritage" 
+                       value="acontheritage" checked="checked" />
+                <label for="filtertogglecontheritage">
+                    Contemporary Heritage
+                </label>
+                <div class="CountHeritage">40</div>
+            </div>
+        </div>
+        <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+                 
+                <input type="checkbox" id="filtertogglemuseum" value="amuseum" checked="checked" />
+                <label for="filtertogglemuseum">
+                    Museums
+                </label>
+                <div class="CountHeritage">21</div>
+            </div>
+        </div>
+        <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+                 
+                <input type="checkbox" id="filtertogglefic" value="afic" checked="checked" />
+                <label for="filtertogglefic">
+                    FIC
+                </label>
+                <div class="CountHeritage">15</div>
+            </div>
+        </div>
+        <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+                 
+                <input type="checkbox" id="filtertoggleboundaries" value="aboundaries"  />
+                <label for="filtertoggleboundaries">
+                    Protected areas
+                </label>
+                <div class="CountHeritage">177</div>
+            </div>
+        </div>
+        
+            
+    </div>
+
+    <div class="buttonbox">
+        
+        <div id="cs-a-button" >
+            <label>
+                <input type="checkbox" id="toggleCSLegendCheckbox" value="isCSLegendActive" onclick="toggleCSLegend(event)" />
+                <figure>
+                    <img src="CityScopeButton.png" />
+                </figure>
+            </label>
+        </div>
+        
+         
+    
+   
+    <div id="cityscope-legend" class="legend">
+        
+        <div class="dropdown maintitleline">
+            <div class="boxt">
+                    <a class="legendtitle" target="_blank" href="http://cities.media.mit.edu/andorra-dynamic-urban-planning/">cityscope</a>
+            </div>
+        </div>
+        
+        <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+                <input type="checkbox" id="filtertoggleTable" value="aTable"  />
+                <label for="filtertoggleTable">
+                    Table
+                </label>
+            </div>
+        </div>  
+       
+        <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+                <input type="checkbox" id="filtertoggleCBorder" value="aCBorder"  />
+                <label for="filtertoggleCBorder">
+                    Complete dynamic Area
+                </label>
+            </div>
+        </div>
+        <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+                <input type="checkbox" id="filtertoggleNBorder" value="aNBorder"  />
+                <label for="filtertoggleNBorder">
+                    New dynamic Area
+                </label>
+            </div>
+        </div>
+        <div class="dropdown maintitleline textlegend">
+            <div class="active box">
+                <input type="checkbox" id="filtertoggleFBorder" value="aFBorder"  />
+                <label for="filtertoggleFBorder">
+                    Fill dynamic Area
+                </label>
+            </div>
+        </div>
+
+    </div>
+        
+    <div id="cs-a-button" >
+            <label>
+                <input type="checkbox" id="toggleMCardCheckbox" value="isMCardActive" onclick="toggleMCard(event)" />
+                <figure>
+                    <img src="StatisticsButton.png" />
+                </figure>
+            </label>
+        </div>
+        
+    <!--TODO Onclick buttonbox display legend below-->
+        
+    </div>
+    <div id="monument-card" class="legend">
+
+    </div>
+    
+</div>
+
+<div id='andCulturaHeritage'>
+    <div id='bn'>
+    </div>
+</div>
+

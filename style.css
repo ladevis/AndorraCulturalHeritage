@@ -1,0 +1,287 @@
+/*
+Project:        Cultural Heritage
+Authors:        Juanita Devis
+                Nuria Macia
+Description:    It styles the mapping.
+Version:        1.0
+Date:           October 2016
+*/
+
+/*----------------------------------------------------------*/
+/* TABLE OF CONTENTS:                                       */
+/*----------------------------------------------------------*/
+/* 		00 - Map   									  	    */
+/*		01 - CityScope table								*/
+/* 		02 - Data in the map and checkbox					*/
+
+/*
+==================================================
+  00 - Map
+==================================================
+*/
+
+/* Hide anchor when href is empty. */
+a.iw-link[href=''] {
+    display: none;
+}
+
+a.iw-link {
+    text-decoration: none;
+}
+
+a.iw-link:hover {
+    color: #d4b53a;
+}
+
+
+/* 900-1650 */
+#bn {
+    height: 100%;
+    width: 100%;
+}
+
+/* Rotate the map, eventually useful for proyections in the cityscope map */
+
+#andCulturalHeritage {
+    transform: rotate(0deg);
+}
+
+/*
+==================================================
+  01 - Info Window
+==================================================
+*/
+
+/* Info Window Hide anchor when href is empty. */
+a.iw-link[href=''] {
+    display: none;
+}
+
+a.iw-link {
+    text-decoration: underline;
+}
+
+a.iw-link:hover {
+    color: #d4b53a;
+}
+
+/* Hide Classification BIC BI when value is empty */
+
+.ch-show-hide div[class=''] {
+    display: none;
+}
+
+.gm-style-iw {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: small;
+    font-weight: 300;
+    max-width: 100%;
+    background-color: #fff;
+}
+
+.gm-style-iw h4, .gm-style-iw p {
+    margin: 0;
+    padding: 0;
+}
+
+.gm-style-iw a {
+    color: gray;
+}
+
+.iw-container {
+    margin-bottom: 10px;
+}
+
+.iw-img {
+   filter:sepia(100%);
+}
+
+.iw-container .iw-title {
+    /*background-color: #d4b53a;*/
+    border-radius: 2px 2px 0 0;
+    color: #676767;
+    font-family:'Carrois Gothic SC', 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    max-width: 230px;
+    text-transform: lowercase;
+    line-height: 85%;
+    letter-spacing: .03em;
+}
+
+.iw-text {
+    color: black;
+    font-family: 'lato', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 230px;
+}
+
+.iw-epa .iw-text {
+    width: 230px;
+}
+
+.iw-imgsource {
+    color: gray;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    max-width: 250px;
+}
+
+/*
+==================================================
+  02 - Legend
+==================================================
+*/
+
+div .box {
+    max-height: 4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 3rem;
+    padding-left: 2rem;
+    
+}
+
+div .boxt {
+    max-height: 4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    padding-right: 3rem;
+    padding-left: 2rem;
+}
+
+.legend .legendtitle{
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 80%;
+    color: #4d4946;
+    text-decoration: none;
+    letter-spacing: .03em;
+}
+
+
+.legend .textlegend:hover {
+    color: #4d4946;
+    font-weight: 500;
+}
+
+.legend input {
+    float: right;
+    width: auto;
+    padding: 0;
+    vertical-align:inherit;
+}
+
+.legend input:not(:checked) + label {
+    opacity: 0.7;
+}
+
+
+.legend .textlegend {
+    display: block;
+    font-size: 1.0rem;
+    text-transform: capitalize;
+    font-family: 'Lato', sans-serif;
+    opacity: 1;
+    font-weight: 300;
+
+}
+
+.image-wrap img {
+    max-width: 1.4rem;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.legendbox {
+    position: absolute;
+    z-index: 2;
+    margin: 3vh;
+    min-width: 20rem;
+}
+
+.legend {
+    background: rgba(0, 0, 0, 0.219608);
+    padding-top:1rem;
+    padding-bottom:2rem;
+    color: #fff;
+    vertical-align: baseline;
+    margin-bottom: 3vh;
+}
+
+label .image-wrap {
+    width: 1.4rem;
+    height: 1.4rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0px;
+}
+
+.maintitleline {
+   /* border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(255, 255, 255, 0.219608);
+    line-height: normal;
+    */
+    
+}
+
+
+
+
+.buttonbox {
+    position: relative;
+    min-width: 20rem;
+}
+
+#cs-a-button {
+    background: rgba(0, 0, 0, 0.219608);
+    padding:1px;
+    color: #fff;
+    max-height: 4rem;
+    max-width: 4rem;
+    display: inline-block;
+    
+}
+
+#cs-a-button label > input{
+    position: absolute;
+    visibility: hidden;
+}
+
+#cs-a-button label > input + figure {
+    cursor: pointer;
+}
+#cityscope-legend {
+    display: none;
+}
+
+figure img {
+    height: 60px;
+    vertical-align: middle;
+}
+
+.buttonbox figure {
+    margin: 0px;
+}
+
+.CountHeritage {
+    text-align: right;
+    display:inline;
+    float: right;
+    width: 2em;
+}
+
+#monument-card {
+    display: none;
+}
+
